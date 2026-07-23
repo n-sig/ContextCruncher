@@ -79,10 +79,38 @@ Zum **Beenden**: Rechtsklick auf das Taskleisten-Symbol → **Beenden**.
 
 ## 🌐 Optional: Browser-Erweiterung
 
-Im Release ist zusätzlich eine `browser_extension.zip` beigelegt. Damit kannst du
-in Chrome/Edge ganze Webseiten als Bild aufnehmen und Text direkt im Browser
+Im Release liegt zusätzlich eine **`browser_extension.zip`**. Damit kannst du in
+Chrome/Edge ganze Webseiten als Bild aufnehmen und Text direkt im Browser
 verkleinern. Sie ist **optional** — für die normale Nutzung brauchst du nur die
-`.exe`. (Anleitung zum Laden liegt der ZIP-Datei bei.)
+`.exe`.
+
+> ⚠️ **Browser können ZIP-Dateien nicht direkt laden** — du musst sie zuerst
+> entpacken. Eine `INSTALL.txt` mit derselben Anleitung liegt in der ZIP.
+
+**So installierst du sie (Chrome / Edge / Brave):**
+
+1. `browser_extension.zip` **entpacken** (Rechtsklick → „Alle extrahieren…").
+   Du bekommst einen Ordner `browser_extension`, in dem `manifest.json` liegt.
+2. In die Adresszeile `chrome://extensions` eingeben (bei Edge: `edge://extensions`).
+3. Oben rechts **„Entwicklermodus"** einschalten.
+4. Auf **„Entpackte Erweiterung laden"** klicken.
+5. Den Ordner **`browser_extension`** auswählen — also den, in dem `manifest.json`
+   **direkt** liegt (nicht den übergeordneten Entpack-Ordner).
+
+**Tipp:** Lege den entpackten Ordner `browser_extension` am besten **direkt neben
+die `ContextCruncher.exe`**. Dann findet das Programm ihn automatisch und der
+Knopf „AddOn-Ordner öffnen" in den Einstellungen funktioniert:
+
+```
+Dein Ordner\
+   ├── ContextCruncher.exe
+   └── browser_extension\
+       └── manifest.json
+```
+
+**Firefox** lädt unsignierte Erweiterungen nur vorübergehend: Adresszeile
+`about:debugging#/runtime/this-firefox` → „Temporäres Add-on laden…" → die
+`manifest.json` auswählen. Das muss nach jedem Firefox-Neustart wiederholt werden.
 
 ---
 
